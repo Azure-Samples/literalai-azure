@@ -9,7 +9,7 @@ products:
   - azure-container-apps
   - azure
 page_type: sample
-urlFragment: literal-on-azure
+urlFragment: literalai-azure
 ---
 
 # LiteralAI on Azure
@@ -27,7 +27,7 @@ Use the [Azure Developer CLI](https://learn.microsoft.com/azure/developer/azure-
 3. Run this command to download the project code:
 
    ```shell
-   azd init -t literal-on-azure
+   azd init -t literalai-azure
    ```
 
    Note that this command will initialize a git repository, so you do not need to clone this repository.
