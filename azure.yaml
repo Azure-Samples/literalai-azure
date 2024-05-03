@@ -1,0 +1,36 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Azure/azure-dev/main/schemas/v1.0/azure.yaml.json
+
+name: literal-aca
+metadata:
+  template: literal-aca@0.0.1-beta
+pipeline:
+  variables:
+    - AZURE_USE_AUTHENTICATION
+    - AZURE_AD_TENANT_ID
+    - LITERAL_DOCKER_IMAGE_VERSION
+  secrets:
+    - AZURE_AD_CLIENT_SECRET
+    - LITERAL_DOCKER_PAT
+hooks:
+  preprovision:
+    posix:
+      shell: sh
+      run: ./scripts/pre_provision.sh
+      interactive: true
+      continueOnError: false
+    windows:
+      shell: pwsh
+      run: ./scripts/pre_provision.ps1
+      interactive: true
+      continueOnError: false
+  postprovision:
+    posix:
+      shell: sh
+      run: ./scripts/post_provision.sh
+      interactive: true
+      continueOnError: false
+    windows:
+      shell: pwsh
+      run: ./scripts/post_provision.ps1
+      interactive: true
+      continueOnError: false
