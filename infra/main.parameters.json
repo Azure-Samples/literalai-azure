@@ -20,6 +20,12 @@
     "dockerPat": {
       "value": "${LITERAL_DOCKER_PAT}"
     },
+    "literalClientId": {
+      "value": "${LITERAL_CLIENT_ID}"
+    },
+    "literalAuthToken": {
+      "value": "${LITERAL_AUTH_TOKEN}"
+    },
     "dockerImageVersion": {
       "value": "${LITERAL_DOCKER_IMAGE_VERSION=latest}"
     },
