@@ -150,7 +150,7 @@ module containerApp 'core/host/container-app.bicep' = {
     location: location
     tags: tags
     containerEnvId: containerAppEnv.outputs.id
-    imageName: 'docker.io/literalai/platform:${dockerImageVersion}'
+    imageName: 'docker.io/literalai/platform-distrib:${dockerImageVersion}'
     targetPort: 3000
     env: [
       {
