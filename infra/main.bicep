@@ -158,6 +158,14 @@ module containerApp 'core/host/container-app.bicep' = {
         secretRef: 'dockerpat'
       }
       {
+        name: 'LITERAL_CLIENT_ID'
+        secretRef: 'literalClientId'
+      }
+      {
+        name: 'LITERAL_AUTH_TOKEN'
+        secretRef: 'literalAuthToken'
+      }
+      {
         name: 'DATABASE_HOST'
         value: postgresServer.outputs.fqdn
       }
