@@ -18,10 +18,7 @@ Use the [Azure Developer CLI](https://learn.microsoft.com/azure/developer/azure-
 
 ## Register on LiteralAI
 
-To self-host LiteralAI you will need to be registered as described in [the documentation](https://docs.getliteral.ai/self-hosting/get-started). Depending on the option you select, you will receive either :
-
-* A Literal Client ID and Authorization Token to run the public image
-* Or a Docker PAT to run the private image
+To self-host LiteralAI you will need to have a Docker PAT. This token is only distributed for customers on the Enterprise plan. Contact us for more information.
 
 ## Setup
 
@@ -66,22 +63,11 @@ Follow these steps to deploy LiteralAI to Azure:
    Enter a name that will be used for the resource group.
    This will create a new folder in the `.azure` folder, and set it as the active environment for any calls to `azd` going forward.
 
-3. Enter your Literal AI credentials
+3. Set your Docker PAT token
 
-This step depends on the option you selected when registering on LiteralAI :
-
-If you opted for the public image, you need to provide the Literal Client ID and Authorization Token you received by mail :
-
-   ```shell
-   azd env set LITERAL_CLIENT_ID your-client-id
-   azd env set LITERAL_AUTH_TOKEN 3a28db.....
-   ```
-
-If you opted for the private image, you need to provide the Docker PAT you have received :
-
-   ```shell
-   azd env set LITERAL_DOCKER_PAT your-docker-pat
-   ```
+ ```shell
+ azd env set LITERAL_DOCKER_PAT your-docker-pat
+ ```
 
 4. (Optional) By default, the deployed Azure Container App will use the credentials authentication system, meaning anyone with routable network access to the web app can attempt to login to it. To enable Entra-based authentication, set the `AZURE_USE_AUTHENTICATION` environment variable to `true`:
 
